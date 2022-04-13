@@ -10,10 +10,9 @@ import { SPComponentLoader } from '@microsoft/sp-loader';
 import styles from './HelloWorldWebPart.module.scss';
 import * as strings from 'HelloWorldWebPartStrings';
 import * as jQuery from 'jquery';
+import 'bootstrap';
 
- SPComponentLoader.loadCss("https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css");
-
-
+SPComponentLoader.loadCss("https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css");
 
 export interface IHelloWorldWebPartProps {
   description: string;
@@ -32,7 +31,6 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
 
   public render(): void {
     this.domElement.innerHTML = `
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
     <section class="${styles.helloWorld} ${!!this.context.sdks.microsoftTeams ? styles.teams : ''}">
       <div class="${styles.welcome}">
         <img alt="" src="${this._isDarkTheme ? require('./assets/welcome-dark.png') : require('./assets/welcome-light.png')}" class="${styles.welcomeImage}" />
@@ -60,10 +58,15 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
       <div>
         <span>SharePoint &hearts; jQuery!</span>
         <p>This SPFx webpart is using jQuery ${jQuery.fn.jquery}</p>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Launch demo modal
+        </button>
       </div>
-
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
@@ -81,10 +84,6 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
           </div>
         </div>
       </div>
-      <script>
-
-
-      </script>
     </section>`;
   }
 
