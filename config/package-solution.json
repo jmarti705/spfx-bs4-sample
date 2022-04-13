@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "jquery-spfx-client-side-solution",
+    "id": "64f15990-2255-4438-90fb-dd8e30ae423c",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "jquery-spfx\t description"
+      },
+      "longDescription": {
+        "default": "jquery-spfx\t description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "jquery-spfx Feature",
+        "description": "The feature that activates elements of the jquery-spfx solution.",
+        "id": "df9a8652-4a7f-48ba-9777-e2fac1250448",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/jquery-spfx.sppkg"
+  }
+}
